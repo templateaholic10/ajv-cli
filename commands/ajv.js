@@ -11,6 +11,7 @@ module.exports = function (argv) {
     opts.schemaId = 'auto';
     if (argv.o) opts.sourceCode = true;
     var ajv = new Ajv(opts);
+    require('ajv-merge-patch')(ajv);
     var invalid;
     ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
     ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-06.json'));
