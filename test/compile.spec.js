@@ -112,7 +112,7 @@ describe('compile', function() {
       assert(error instanceof Error);
       assert.equal(stdout, '');
       var lines = assertError(stderr);
-      assert(/schema\sis\sinvalid/.test(lines[1]));
+      assert(/schema\swith\skey\sor\sid\s""\salready\sexists/.test(lines[1]));
       done();
     });
   });
